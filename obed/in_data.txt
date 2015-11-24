@@ -1,0 +1,6 @@
+1422748800 Ivan 250 Igor -120 Roman -80;
+1422835200 Serge 330 Ivan -120 Roman -80;
+1422921600 Roman 180 Igor -100;
+1423030800 Kirill 150 Igor -80 Roman -50;
+1423110000 Petr 220 Igor -120 Roman -80 Vasya -70;
+1423217047 Fedr 250 Igor -100 Roman -80;
