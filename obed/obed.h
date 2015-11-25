@@ -25,7 +25,7 @@ public:
 		std::string tmp;
 
 		//Получаем штамп времени
-		size_t pos, pos1;
+		size_t pos(0), pos1(0);
 		pos1 = str.find_first_of(" \t", pos);
 		tmpTmStamp = atoi(str.substr(pos, pos1).c_str());
 
@@ -69,7 +69,7 @@ public:
 		{
 			++iter;
 		}
-		s += std::to_string(iter->first);
+		s += std::to_string((iter->first)+1);
 		s += " ";
 		s+=iter->second.getstring();
 		return s;
@@ -101,31 +101,15 @@ public:
 		{
 			creditor = iter->second.GetCreditor();
 			std::map<std::string, int> *massDebtors = iter->second.getListDebtors();
-			//massDebtors=iter->second.getListDebtors()
 			for (std::map<std::string, int>::iterator iter = (*massDebtors).begin(); iter != (*massDebtors).end();++iter)
 			{
 				(*MassReport)[iter->first + " -> " + creditor] += iter->second;
 			}
 		}
-		/*
-		for (std::map<std::string, int>::iterator iter = (*MassReport).begin(); iter != (*MassReport).end(); ++iter)
-		{
-			std::cout << iter->first << " " <<iter->second<< "\n";
-		}
-		//*/
 		return MassReport;
-		/*
-		creditor = iter->second.setCreditor();
-		std::map<std::string, int> *listD = iter->second.getListDebtors();
-		//*/
-
-
 	}
 	unsigned int Size()
 	{
-		return size;
+		return size+1;
 	}
-
 };
-
-

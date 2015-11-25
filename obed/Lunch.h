@@ -29,6 +29,7 @@ public:
 		{
 			result += " ";
 			result += iter->first;
+			result += " ";
 			result += std::to_string(iter->second);
 		}
 		result += ";";
