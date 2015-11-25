@@ -9,7 +9,7 @@
 
 class dbObed
 {
-	unsigned int size=-1;
+	//unsigned int size=-1;
 	std::map<unsigned int, Lunch> Lunches;
 	std::string creditor; //Тот кто платил
 public:
@@ -55,11 +55,11 @@ public:
 			//Добавляем дебитора в массив 
 			Lunches[tmpTmStamp].addDebtor(tmp, tmpSummObed);
 		}
-		++size;
+		//++size;
 	}
 	std::string operator[] (unsigned int i)
 	{
-		if(i>size)
+		if(i>Lunches.size()-1)
 		{
 			throw "over massive";
 		}
@@ -116,6 +116,6 @@ public:
 	}
 	unsigned int Size()
 	{
-		return size+1;
+		return Lunches.size();
 	}
 };
