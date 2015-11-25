@@ -34,7 +34,6 @@ int main()
 		}
 		cout << "Load Lunches complete.\n----------------------------------------------------\n";
 
-		cout << dbober[100];
 		for (unsigned int i = 0; i < dbober.Size(); ++i)
 		{
 			cout << i + 1 << "  " << dbober[i] << endl;
@@ -62,7 +61,7 @@ int main()
 			while (true)
 			{
 				cin >> numberDateEnd;
-				if (cin.fail() || numberDateBegin > dbober.Size() || numberDateEnd < numberDateBegin)
+				if (cin.fail() || numberDateEnd > dbober.Size() || numberDateEnd < numberDateBegin)
 				{
 					cin.sync();
 					cin.clear();

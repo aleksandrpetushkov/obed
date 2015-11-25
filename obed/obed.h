@@ -69,8 +69,14 @@ public:
 		{
 			++iter;
 		}
-		s += std::to_string((iter->first)+1);
-		s += " ";
+		char buffer[80];
+		char* format = "%Y %B %d";
+		time_t seconds = iter->first;
+		tm* timeinfo = localtime(&seconds);
+		strftime(buffer, 80, format, timeinfo);
+//		return result;
+		s += buffer;
+		s += ": ";
 		s+=iter->second.getstring();
 		return s;
 	}
